@@ -1,0 +1,19 @@
+public abstract class Vehicle {
+    protected String brand;
+    protected double price;
+    protected int year;
+
+    public Vehicle(String brand, double price, int year) {
+        this.brand = brand;
+        this.price = price;
+        this.year = year;
+    }
+
+    public abstract void displayInfo();
+
+    public double calculateDepreciation() {
+        int currentYear = 2024;
+        int age = currentYear - year;
+        return price - (age * 1000);
+    }
+}
