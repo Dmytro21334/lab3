@@ -1,0 +1,22 @@
+public class Car extends Vehicle implements Chargeable {
+    public Car(String brand, double price, int year) {
+        super(brand, price, year);
+    }
+
+    @Override
+    public void displayInfo() {
+        System.out.println("Марка: " + brand);
+        System.out.println("Ціна: " + price);
+        System.out.println("Рік випуску: " + year);
+    }
+
+    @Override
+    public void charge(double amount) {
+        System.out.println("Автомобіль не підтримує зарядку.");
+    }
+
+    public void setDiscount(double discount) {
+        price -= discount;
+        System.out.println("Нова ціна після знижки: " + price);
+    }
+}
