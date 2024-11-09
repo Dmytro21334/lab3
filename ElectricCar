@@ -1,0 +1,28 @@
+public class ElectricCar extends Car {
+    private double batteryCapacity;
+    private int range;
+
+    public ElectricCar(String brand, double price, int year, double batteryCapacity, int range) {
+        super(brand, price, year);
+        this.batteryCapacity = batteryCapacity;
+        this.range = range;
+    }
+
+    @Override
+    public void displayInfo() {
+        super.displayInfo();
+        System.out.println("Ємність батареї: " + batteryCapacity + " кВт·год");
+        System.out.println("Запас ходу: " + range + " км");
+    }
+
+    @Override
+    public void charge(double amount) {
+        batteryCapacity += amount;
+        System.out.println("Батарея заряджена. Поточна ємність: " + batteryCapacity + " кВт·год");
+    }
+
+    public void increaseRange(int extraRange) {
+        range += extraRange;
+        System.out.println("Новий запас ходу: " + range + " км");
+    }
+}
